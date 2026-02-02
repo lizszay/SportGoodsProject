@@ -13,7 +13,7 @@ public partial class OrderItem
 
     public int CountOrder { get; set; }
 
-    public virtual Tovar ArticleNavigation { get; set; } = null!;
+    public virtual Tovar Tovar { get; set; } = null!;
 
-    public virtual Order IdOrderNavigation { get; set; } = null!;
+    public virtual Order Order { get; set; } = null!;
 }

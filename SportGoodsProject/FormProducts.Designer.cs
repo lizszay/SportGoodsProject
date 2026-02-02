@@ -30,10 +30,10 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panelTop = new Panel();
+            btnBack = new Button();
+            lblUserName = new Label();
             btnLogut = new Button();
             dgvProducts = new DataGridView();
-            label1 = new Label();
-            btnBack = new Button();
             panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
             SuspendLayout();
@@ -41,13 +41,38 @@
             // panelTop
             // 
             panelTop.Controls.Add(btnBack);
-            panelTop.Controls.Add(label1);
+            panelTop.Controls.Add(lblUserName);
             panelTop.Controls.Add(btnLogut);
             panelTop.Dock = DockStyle.Top;
             panelTop.Location = new Point(10, 10);
             panelTop.Name = "panelTop";
             panelTop.Size = new Size(964, 40);
             panelTop.TabIndex = 0;
+            // 
+            // btnBack
+            // 
+            btnBack.BackColor = Color.FromArgb(67, 97, 238);
+            btnBack.Dock = DockStyle.Left;
+            btnBack.FlatAppearance.BorderSize = 0;
+            btnBack.FlatStyle = FlatStyle.Flat;
+            btnBack.ForeColor = Color.White;
+            btnBack.Location = new Point(0, 0);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(150, 40);
+            btnBack.TabIndex = 7;
+            btnBack.Text = "Назад";
+            btnBack.UseVisualStyleBackColor = false;
+            // 
+            // lblUserName
+            // 
+            lblUserName.AutoSize = true;
+            lblUserName.Dock = DockStyle.Right;
+            lblUserName.Location = new Point(769, 0);
+            lblUserName.Name = "lblUserName";
+            lblUserName.Size = new Size(45, 19);
+            lblUserName.TabIndex = 6;
+            lblUserName.Text = "label1";
+            lblUserName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnLogut
             // 
@@ -90,31 +115,6 @@
             dgvProducts.Size = new Size(964, 601);
             dgvProducts.TabIndex = 1;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Dock = DockStyle.Right;
-            label1.Location = new Point(769, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(45, 19);
-            label1.TabIndex = 6;
-            label1.Text = "label1";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // btnBack
-            // 
-            btnBack.BackColor = Color.FromArgb(67, 97, 238);
-            btnBack.Dock = DockStyle.Left;
-            btnBack.FlatAppearance.BorderSize = 0;
-            btnBack.FlatStyle = FlatStyle.Flat;
-            btnBack.ForeColor = Color.White;
-            btnBack.Location = new Point(0, 0);
-            btnBack.Name = "btnBack";
-            btnBack.Size = new Size(150, 40);
-            btnBack.TabIndex = 7;
-            btnBack.Text = "Назад";
-            btnBack.UseVisualStyleBackColor = false;
-            // 
             // FormProducts
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
@@ -124,7 +124,7 @@
             Controls.Add(dgvProducts);
             Controls.Add(panelTop);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "FormProducts";
             Padding = new Padding(10);
             StartPosition = FormStartPosition.CenterScreen;
@@ -141,6 +141,6 @@
         private Button btnLogut;
         private DataGridView dgvProducts;
         private Button btnBack;
-        private Label label1;
+        private Label lblUserName;
     }
 }

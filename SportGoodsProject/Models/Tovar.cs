@@ -25,11 +25,11 @@ public partial class Tovar
 
     public string Description { get; set; } = null!;
 
-    public virtual Category? IdCategoryNavigation { get; set; }
+    public virtual Category? Category { get; set; }
 
-    public virtual Manufacturer? IdManufacturerNavigation { get; set; }
+    public virtual Manufacturer? Manufacturer { get; set; }
 
-    public virtual Supplier? IdSupplierNavigation { get; set; }
+    public virtual Supplier? Supplier { get; set; }
 
     public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 }
