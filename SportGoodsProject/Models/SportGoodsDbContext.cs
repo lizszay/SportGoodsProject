@@ -187,7 +187,7 @@ public partial class SportGoodsDbContext : DbContext
             entity.Property(e => e.TovarName).HasColumnName("tovar_name");
             entity.Property(e => e.Unit).HasColumnName("unit");
 
-            entity.HasOne(d => d.IdCategoryNavigation).WithMany(p => p.Tovars)
+            entity.HasOne(d => d.Category).WithMany(p => p.Tovars)
                 .HasForeignKey(d => d.IdCategory)
                 .HasConstraintName("tovars_id_category_fkey");
 

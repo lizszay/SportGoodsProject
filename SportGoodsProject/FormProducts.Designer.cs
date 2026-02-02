@@ -62,6 +62,7 @@
             btnBack.TabIndex = 7;
             btnBack.Text = "Назад";
             btnBack.UseVisualStyleBackColor = false;
+            btnBack.Click += BtnBack_Click;
             // 
             // lblUserName
             // 
@@ -87,6 +88,7 @@
             btnLogut.TabIndex = 5;
             btnLogut.Text = "Выход";
             btnLogut.UseVisualStyleBackColor = false;
+            btnLogut.Click += BtnLogut_Click;
             // 
             // dgvProducts
             // 
