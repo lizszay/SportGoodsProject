@@ -40,6 +40,8 @@ namespace SportGoodsProject
             lblUserName.Text = IsGuest ? "Гость" : CurrentUser.FullName;
 
             LoadOrders();
+
+            this.Load += (s, e) => dgvOrders.ClearSelection();
         }
 
         private void LoadOrders()
