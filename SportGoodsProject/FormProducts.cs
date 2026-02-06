@@ -145,7 +145,7 @@ namespace SportGoodsProject
 
             if (tovar.CountTovar <= 0)
             {
-                row.DefaultCellStyle.BackColor = Color.Blue;
+                row.DefaultCellStyle.BackColor = Color.LightBlue;
             }
 
             if (tovar.Discount > 0)
@@ -166,7 +166,7 @@ namespace SportGoodsProject
             if (tovar.Discount > 0)
             {
                 decimal finalPrice = tovar.Price * (100 - tovar.Discount) / 100;
-                priceText = $"{tovar.Price:C} -> {finalPrice:C}";
+                priceText = $"{ToStrikeThrough(tovar.Price)}   -> {finalPrice:C}";
             }
             else
             {
@@ -179,6 +179,12 @@ namespace SportGoodsProject
                 $"Поставщик: {tovar.Supplier.SupplierName}\n" +
                 $"Цена: {priceText}\n" +
                 $"Кол-во на складе: {tovar.CountTovar}";
+        }
+
+        private string ToStrikeThrough(decimal price)
+        {
+            string priceStr = price.ToString("C");
+            return string.Join("\u0336", priceStr.ToCharArray()) + "\u0336";
         }
 
         private Image LoadProductImage(string photoUrl)
