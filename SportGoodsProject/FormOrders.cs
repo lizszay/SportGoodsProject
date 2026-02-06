@@ -1,12 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SportGoodsProject.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 
 namespace SportGoodsProject
 {
@@ -131,7 +125,7 @@ namespace SportGoodsProject
 
         private void BtnBack_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Abort; // Специальный результат для "Назад"
+            this.DialogResult = DialogResult.Abort; 
             this.Close();
         }
 

@@ -1,11 +1,5 @@
 ﻿using SportGoodsProject.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 
 namespace SportGoodsProject
 {
@@ -21,7 +15,8 @@ namespace SportGoodsProject
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(txtLogin.Text) || String.IsNullOrWhiteSpace(txtPassword.Text))
+            if (String.IsNullOrWhiteSpace(txtLogin.Text) 
+                || String.IsNullOrWhiteSpace(txtPassword.Text))
             {
                 MessageBox.Show(
                     "Введите логин и пароль",
@@ -34,7 +29,10 @@ namespace SportGoodsProject
 
             using (var db = new SportGoodsDbContext())
             {
-                var user = db.Users.Where(w => w.Login == txtLogin.Text && w.PasswordHash == txtPassword.Text).FirstOrDefault();
+                var user = db.Users.Where(
+                    w => w.Login == txtLogin.Text && 
+                    w.PasswordHash == txtPassword.Text
+                    ).FirstOrDefault();
 
                 if (user != null)
                 {
