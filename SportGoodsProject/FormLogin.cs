@@ -51,8 +51,6 @@ namespace SportGoodsProject
                     MessageBoxIcon.Error);
                 }
             }
-
-
         }
 
         private void BtnGuest_Click(object sender, EventArgs e)

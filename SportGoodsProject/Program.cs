@@ -4,16 +4,89 @@ namespace SportGoodsProject
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new FormLogin());
+            bool exitProgram = false;
+
+            while (!exitProgram)
+            {
+                using (var formLogin = new FormLogin())
+                {
+                    if (formLogin.ShowDialog() == DialogResult.OK)
+                    {
+                        bool stayInMenu = true;
+
+                        while (stayInMenu && !exitProgram)
+                        {
+                            stayInMenu = false;
+
+                            using (var formMenu = new FormMenu(
+                                formLogin.CurrentUser,
+                                formLogin.IsGuest))
+                            {
+                                var menuResult = formMenu.ShowDialog();
+
+                                if (menuResult == DialogResult.Yes)
+                                {
+                                    using (var formProducts = new FormProducts(
+                                        formLogin.CurrentUser,
+                                        formLogin.IsGuest))
+                                    {
+                                        var productsResult = formProducts.ShowDialog();
+
+                                        if (productsResult == DialogResult.Abort)
+                                        {
+                                            stayInMenu = true;
+                                        }
+                                        else if (productsResult == DialogResult.Cancel)
+                                        {
+                                        }
+                                        else
+                                        {
+                                            exitProgram = true;  
+                                        }
+                                    }
+                                }
+                                else if (menuResult == DialogResult.No) 
+                                {
+                                    using (var formOrders = new FormOrders(
+                                        formLogin.CurrentUser,
+                                        formLogin.IsGuest))
+                                    {
+                                        var ordersResult = formOrders.ShowDialog();
+
+                                        if (ordersResult == DialogResult.Abort)
+                                        {
+                                            stayInMenu = true;
+                                        }
+                                        else if (ordersResult == DialogResult.Cancel)
+                                        {
+
+                                        }
+                                        else
+                                        {
+                                            exitProgram = true;
+                                        }
+                                    }
+                                }
+                                else if (menuResult == DialogResult.Cancel)
+                                {
+
+                                }
+                                else
+                                {
+                                    exitProgram = true;
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        exitProgram = true; 
+                    }
+                }
+            }
         }
     }
 }
