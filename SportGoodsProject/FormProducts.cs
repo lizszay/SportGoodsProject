@@ -48,7 +48,40 @@ namespace SportGoodsProject
 
             lblUserName.Text = IsGuest ? "Гость" : CurrentUser.FullName;
 
+            // Используем лямбда-выражение для VisibleChanged
+            this.VisibleChanged += (s, e) =>
+            {
+                if (this.Visible)
+                {
+                    dgvProducts.ClearSelection();
+                }
+            };
+
             LoadProducts();
+
+               /*            
+                this - текущая форма
+                .Load - событие, которое происходит один раз когда форма полностью загружена в память, но еще не отобразилась на экране
+
+                2. +=
+                "Добавить обработчик" - подписываемся на событие
+
+                Когда произойдет событие Load, выполнится наш код
+
+                3. (s, e) =>
+                Лямбда - выражение(короткая анонимная функция)
+
+                s(sender) - кто вызвал событие(форма)
+
+                e(event args) - параметры события (обычно пустые)
+
+                => - "выполнить следующий код"
+
+                4. dgvProducts.ClearSelection()
+                Конкретное действие: убрать выделение в DataGridView
+
+                Выполнится автоматически при загрузке формы*/
+            this.Load += (s, e) => dgvProducts.ClearSelection();
         }
 
         private void LoadProducts()
@@ -86,6 +119,9 @@ namespace SportGoodsProject
                     dgvProducts.ResumeLayout();
                     //высота строк по содержимому
                     dgvProducts.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
+
+                    /*dgvProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                    dgvProducts.ClearSelection();*/
                 }
             }
             catch (Exception ex)

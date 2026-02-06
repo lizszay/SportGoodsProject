@@ -1,4 +1,5 @@
-﻿using SportGoodsProject.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using SportGoodsProject.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,7 +51,7 @@ namespace SportGoodsProject
 
                     var orders = db.Orders
                         .Where(w => w.IdUser == CurrentUser.Id)
-                        .Include(i => i.OrderItem)
+                        .Include(i => i.OrderItems)
                             //подгрузка влож.нав.св-в
                             .ThenInclude(t => t.Tovar)
                         .Include(i => i.Status)
