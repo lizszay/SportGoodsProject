@@ -140,7 +140,6 @@ namespace SportGoodsProject
             if (tovar.Discount > 15)
             {
                 row.DefaultCellStyle.BackColor = ColorTranslator.FromHtml("#2EC4B6");
-                //row.DefaultCellStyle.ForeColor = Color.White; //если надо будет цвет белый на скидке
             }
 
             if (tovar.CountTovar <= 0)
@@ -148,7 +147,7 @@ namespace SportGoodsProject
                 row.DefaultCellStyle.BackColor = Color.LightBlue;
             }
 
-            if (tovar.Discount > 0)
+            /*if (tovar.Discount > 0)
             {
                 row.Cells["colDiscount"].Style.ForeColor = Color.Red;
                 row.Cells["colDiscount"].Style.Font = new Font(
@@ -156,7 +155,7 @@ namespace SportGoodsProject
                     12,
                     FontStyle.Bold
                 );
-            }
+            }*/
         }
 
         private string FormatProductInfo(Tovar tovar)

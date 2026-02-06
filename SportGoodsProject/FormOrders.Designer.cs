@@ -46,6 +46,7 @@
             panelTop.Dock = DockStyle.Top;
             panelTop.Location = new Point(0, 0);
             panelTop.Name = "panelTop";
+            panelTop.Padding = new Padding(0, 0, 0, 10);
             panelTop.Size = new Size(948, 40);
             panelTop.TabIndex = 1;
             // 
@@ -58,7 +59,7 @@
             btnBack.ForeColor = Color.White;
             btnBack.Location = new Point(0, 0);
             btnBack.Name = "btnBack";
-            btnBack.Size = new Size(150, 40);
+            btnBack.Size = new Size(150, 30);
             btnBack.TabIndex = 7;
             btnBack.Text = "Назад";
             btnBack.UseVisualStyleBackColor = false;
@@ -84,7 +85,7 @@
             btnLogut.ForeColor = Color.White;
             btnLogut.Location = new Point(798, 0);
             btnLogut.Name = "btnLogut";
-            btnLogut.Size = new Size(150, 40);
+            btnLogut.Size = new Size(150, 30);
             btnLogut.TabIndex = 5;
             btnLogut.Text = "Выход";
             btnLogut.UseVisualStyleBackColor = false;
