@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             panelTop = new Panel();
-            btnBack = new Button();
             lblUserName = new Label();
             btnLogut = new Button();
-            panel1 = new Panel();
+            pnlButtons = new Panel();
+            btnOrders = new Button();
+            btnProducts = new Button();
             panelTop.SuspendLayout();
+            pnlButtons.SuspendLayout();
             SuspendLayout();
             // 
             // panelTop
             // 
-            panelTop.Controls.Add(btnBack);
             panelTop.Controls.Add(lblUserName);
             panelTop.Controls.Add(btnLogut);
             panelTop.Dock = DockStyle.Top;
@@ -46,20 +47,6 @@
             panelTop.Name = "panelTop";
             panelTop.Size = new Size(547, 40);
             panelTop.TabIndex = 2;
-            // 
-            // btnBack
-            // 
-            btnBack.BackColor = Color.FromArgb(67, 97, 238);
-            btnBack.Dock = DockStyle.Left;
-            btnBack.FlatAppearance.BorderSize = 0;
-            btnBack.FlatStyle = FlatStyle.Flat;
-            btnBack.ForeColor = Color.White;
-            btnBack.Location = new Point(0, 0);
-            btnBack.Name = "btnBack";
-            btnBack.Size = new Size(150, 40);
-            btnBack.TabIndex = 7;
-            btnBack.Text = "Назад";
-            btnBack.UseVisualStyleBackColor = false;
             // 
             // lblUserName
             // 
@@ -85,14 +72,43 @@
             btnLogut.TabIndex = 5;
             btnLogut.Text = "Выход";
             btnLogut.UseVisualStyleBackColor = false;
+            btnLogut.Click += BtnLogut_Click;
             // 
-            // panel1
+            // pnlButtons
             // 
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 40);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(547, 321);
-            panel1.TabIndex = 3;
+            pnlButtons.Controls.Add(btnOrders);
+            pnlButtons.Controls.Add(btnProducts);
+            pnlButtons.Dock = DockStyle.Fill;
+            pnlButtons.Location = new Point(0, 40);
+            pnlButtons.Name = "pnlButtons";
+            pnlButtons.Size = new Size(547, 321);
+            pnlButtons.TabIndex = 3;
+            // 
+            // btnOrders
+            // 
+            btnOrders.Anchor = AnchorStyles.None;
+            btnOrders.BackColor = Color.FromArgb(233, 245, 255);
+            btnOrders.FlatAppearance.BorderSize = 0;
+            btnOrders.Location = new Point(198, 179);
+            btnOrders.Name = "btnOrders";
+            btnOrders.Size = new Size(150, 30);
+            btnOrders.TabIndex = 1;
+            btnOrders.Text = "Заказы";
+            btnOrders.UseVisualStyleBackColor = false;
+            btnOrders.Click += BtnOrders_Click;
+            // 
+            // btnProducts
+            // 
+            btnProducts.Anchor = AnchorStyles.None;
+            btnProducts.BackColor = Color.FromArgb(233, 245, 255);
+            btnProducts.FlatAppearance.BorderSize = 0;
+            btnProducts.Location = new Point(198, 111);
+            btnProducts.Name = "btnProducts";
+            btnProducts.Size = new Size(150, 30);
+            btnProducts.TabIndex = 0;
+            btnProducts.Text = "Продукты";
+            btnProducts.UseVisualStyleBackColor = false;
+            btnProducts.Click += BtnProducts_Click;
             // 
             // FormMenu
             // 
@@ -100,24 +116,26 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(547, 361);
-            Controls.Add(panel1);
+            Controls.Add(pnlButtons);
             Controls.Add(panelTop);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "FormMenu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormMenu";
             panelTop.ResumeLayout(false);
             panelTop.PerformLayout();
+            pnlButtons.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panelTop;
-        private Button btnBack;
         private Label lblUserName;
         private Button btnLogut;
-        private Panel panel1;
+        private Panel pnlButtons;
+        private Button btnOrders;
+        private Button btnProducts;
     }
 }
